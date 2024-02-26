@@ -1,7 +1,7 @@
 import React from 'react';
 const Grid = () => {
     return (
-        <div className="container">
+        <div className="">
             <div  className="row ">
                 <div  className='col-sm-4 '>one</div>
                 <div className='col-sm-4'>Two</div>

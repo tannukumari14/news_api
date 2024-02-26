@@ -1,6 +1,6 @@
-const Search = () => {
+const SearchBar= () => {
   return (
-    <div className="Search" >
+    <div className="search" >
       <form className="d-flex" role="search">
         <img id="search_icon" src="search.jpeg" alt="Search" /> 
         <h4 id="search_text">Search</h4>
@@ -11,4 +11,4 @@ const Search = () => {
   );
 }
 
-export default Search;
+export default SearchBar;
