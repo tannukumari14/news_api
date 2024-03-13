@@ -230,3 +230,168 @@
   
   
   
+
+// page
+
+"use client"
+import React from "react";
+import "./globals.css";
+import Header from "./header.js";
+import SearchBar from "./search_bar.js"
+import Grid from "./grid.js";
+import Footer from "./footer.js"
+import NewsData from "./data"
+
+
+const page = () => {
+  return (
+    <>
+      <Header />
+      <div className="container">
+        <SearchBar />
+        {/* props display data */}
+        {/* <Grid newsItem={NewsData}/> */}
+
+        {/* grid dummy data */}
+        {/* <Grid/> */}
+        {/* <Grid */}
+        {/* <Grid */}
+
+        {/* data shivani wala */}
+        <div className='top-news'>Top News From India</div>
+       <Grid  NewsData={NewsData[0]}  NewsData1={NewsData[1]}   NewsData2={NewsData[2]}  />
+       <Grid  NewsData={NewsData[3]}   NewsData1={NewsData[4]}   NewsData2={NewsData[5]}  />
+       <Grid  NewsData={NewsData[6]}   NewsData1={NewsData[7]}    NewsData2={NewsData[8]} />
+
+      </div>
+      <Footer />
+    </>
+  );
+};
+
+export default page;
+
+
+
+// grid 
+
+// import React from 'react';
+// import News_row from "./News_row";
+// const Grid = () => {
+//     return (
+//         <>
+//             <div className="row">
+//                 <div className='top-news'>Top News From India</div>
+//                 <News_row/>
+//                 <News_row/>
+//                 <News_row/>
+//             </div>
+//         </>
+//     );
+// }
+// export default Grid;
+
+
+// import React from 'react';
+// import ListItem from "./ListItems.js";
+// import NewsData from "./data";
+// const Grid = () => {
+//     return (
+//         <>
+//             <div className="row">
+//                 <div className='col-sm-4'><ListItem NewsData={NewsData[0]} /></div>
+//                 <div className='col-sm-4'><ListItem NewsData={NewsData[1]} /></div>
+//                 <div className='col-sm-4'><ListItem NewsData={NewsData[2]} /></div>
+//                 <div className='col-sm-4'><ListItem NewsData={NewsData[3]} /></div>
+//                 <div className='col-sm-4'><ListItem NewsData={NewsData[4]} /></div>
+//                 <div className='col-sm-4'><ListItem NewsData={NewsData[5]} /></div>
+//                 <div className='col-sm-4'><ListItem NewsData={NewsData[6]} /></div>
+//                 <div className='col-sm-4'><ListItem NewsData={NewsData[7]} /></div>
+//                 <div className='col-sm-4'><ListItem NewsData={NewsData[8]} /></div>
+//             </div>
+//         </>
+//     );
+// }
+// export default Grid;
+
+
+// import React from 'react';
+// import ListItems from "./ListItems.js";
+
+// const Grid = ({NewsData,NewsData1,NewsData2}) => {
+//     return (
+//         <>
+//             <div className="row">
+//                 <ListItems NewsData={NewsData}/>
+//                 <ListItems NewsData={NewsData1}/>
+//                 <ListItems NewsData={NewsData2}/>
+//             </div>
+//         </>
+//     );
+// }
+// export default Grid;
+
+// data
+// export default function List() {
+//   return (
+//     <div className="row">
+//       <div className='col-sm-4'>
+//         <h2>{NewsData[0].Name}</h2>
+//         <img src={NewsData[0].image} alt={NewsData[0].Name} />
+//         <p>{NewsData[0].description}</p>
+//       </div>
+
+//       <div className='col-sm-4'>
+//         <h2>{NewsData[1].Name}</h2>
+//         <img src={NewsData[1].image} alt={NewsData[1].Name} />
+//         <p>{NewsData[1].description}</p>
+//       </div>
+
+//       <div className='col-sm-4'>
+//         <h2>{NewsData[2].Name}</h2>
+//         <img src={NewsData[2].image} alt={NewsData[2].Name} />
+//         <p>{NewsData[2].description}</p>
+//       </div>
+
+//       <div className='col-sm-4'>
+//         <h2>{NewsData[3].Name}</h2>
+//         <img src={NewsData[3].image} alt={NewsData[3].Name} />
+//         <p>{NewsData[3].description}</p>
+//       </div>
+
+//       <div className='col-sm-4'>
+//         <h2>{NewsData[4].Name}</h2>
+//         <img src={NewsData[4].image} alt={NewsData[4].Name} />
+//         <p>{NewsData[4].description}</p>
+//       </div>
+
+//       <div className='col-sm-4'>
+//         <h2>{NewsData[5].Name}</h2>
+//         <img src={NewsData[5].image} alt={NewsData[5].Name} />
+//         <p>{NewsData[5].description}</p>
+//       </div>
+
+//       <div className='col-sm-4'>
+//         <h2>{NewsData[6].Name}</h2>
+//         <img src={NewsData[6].image} alt={NewsData[6].Name} />
+//         <p>{NewsData[6].description}</p>
+//       </div>
+
+//       <div className='col-sm-4'>
+//         <h2>{NewsData[7].Name}</h2>
+//         <img src={NewsData[7].image} alt={NewsData[7].Name} />
+//         <p>{NewsData[7].description}</p>
+//       </div>
+
+//       <div className='col-sm-4'>
+//         <h2>{NewsData[8].Name}</h2>
+//         <img src={NewsData[8].image} alt={NewsData[8].Name} />
+//         <p>{NewsData[8].description}</p>
+//       </div>
+//     </div>
+//   )
+// }
+
+
+
+

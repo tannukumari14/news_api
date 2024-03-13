@@ -1,6 +1,4 @@
 import { Inter } from "next/font/google";
-import "./globals.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.css'
 
 const inter = Inter({ subsets: ["latin"] });
@@ -15,6 +13,23 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         {children}
+
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Iowan Old Style"
+      />
+       <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inknut Antiqua"
+      />
+         <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter"
+      />
+        <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inria Serif"
+      />
       </body>
     </html>
   );

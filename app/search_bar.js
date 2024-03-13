@@ -1,14 +1,11 @@
-const SearchBar= () => {
+const SearchBar = () => {
   return (
-    <div className="search" >
-      <form className="d-flex" role="search">
-        <img id="search_icon" src="search.jpeg" alt="Search" /> 
-        <h4 id="search_text">Search</h4>
-        <input className="form-control me-2" type="search" aria-label="Search" /> 
-        <button className="go_button btn " type="submit">Go</button>
-      </form>
+  <>
+    <div className="search">
+        <input placeholder="Search" className="search-bar" type="search" />
+        <button className="go_button ">Go</button>
     </div>
-  );
+  </>
+  )
 }
-
 export default SearchBar;
