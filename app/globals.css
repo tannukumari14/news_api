@@ -156,7 +156,46 @@
   font-weight: 400;
 }
 
+/* ListItems */
+.image{
+  width: 100%;
+}
 
+.box{
+  margin-bottom: 80px;
+  padding: 20px;
+}
+
+.Name{
+  color: #3C3030;
+  font-family: "Inknut Antiqua";
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.72px;
+  line-height: 120%;
+  margin-top: 10px;
+}
+
+.description{
+  color: var(--Dark, #3C3030);
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 400;
+
+}
+
+.article{
+  color: #3C3030;
+  text-decoration: none;
+}
+
+.top-news{
+  color:  #D02424;
+  font-family: "Inria Sans";
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
 @media (min-width: 1260px) {
   .container {
     width: 940px;
@@ -180,11 +219,13 @@
     height: 25.809px;
   }
 
+
+
 /* layout */
   .container{
     width: 364px;
   }
-  /* grid css */
+  /* news row css */
   .col-sm-4{
     margin-bottom: 60px;
   }
@@ -214,42 +255,3 @@
 
 
 
-/* ListItems */
-.image{
-  width: 250px;
-  height: 120px;
-  margin-bottom: 16px;
-  margin-top: 16px;
-}
-
-.Name{
-  width: 250px;
-  height: 80px;
-  color: #3C3030;
-  font-family: "Inknut Antiqua";
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: -0.72px;
-}
-
-.description{
-  width:250px;
-  height: 110px;
-  color: var(--Dark, #3C3030);
-  font-family: "Inter";
-  font-size: 16px;
-  font-weight: 400;
-}
-
-.article{
-  color: #3C3030;
-  text-decoration: none;
-}
-
-.top-news{
-  color:  #D02424;
-  font-family: "Inria Sans";
-  font-size: 20px;
-  font-weight: 400;
-  text-transform: uppercase;
-}

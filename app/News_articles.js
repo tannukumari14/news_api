@@ -1,6 +1,6 @@
 import React from 'react';
 
-const List_items = ({news_data}) => (
+const News_articles = ({news_data}) => (
   <>
    <div className='col-sm-4'>
     <img className='image' src={news_data.image} alt={news_data.Name} />
@@ -12,5 +12,6 @@ const List_items = ({news_data}) => (
   </div>
   </>
 );
-export default List_items;
+export default News_articles;
+
 
