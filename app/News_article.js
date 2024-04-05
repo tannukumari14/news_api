@@ -3,7 +3,7 @@ import React from 'react';
 const News_article = ({article}) => (
   <>
    <div className='col-sm-4'>
-    <img className='image' src={article.image} alt={article.Name} />
+    <img className='image' src={article.urlToImage} alt={article.Name} />
     <h2 className='Name' >{article.Name}</h2>
     <p className='description'>{article.description}</p>
     <a className="article  ">

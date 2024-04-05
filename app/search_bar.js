@@ -25,22 +25,35 @@ const SearchBar = () => {
     fetchNews(searchInput);
   };
 
+  class Product{
+    constructor(title,description,urlToImage,url){
+      this.title = title;
+      this.description = description;
+      this.urlToImage=urlToImage;
+      this.url=url;
+    }
+  }
+
+  
   const fetchNews = (searchQuery) => {
     const apiKey = "44137023ef4d47af8275855373f32548";
     const url = `https://newsapi.org/v2/everything?q=${searchQuery}&apiKey=${apiKey}`;
-
+  
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        console.log(data); 
-        setNewsData(data.articles);
+        const news = data.articles.map(article => {
+          return new Product(article.description, article.title, article.url, article.urlToImage);
+        });
+        console.log(news,"NEWS");
+        setNewsData(news);
       })
       
       .catch(error => {
         console.error('Error fetching news:', error);
       });
   };
-
+  
     return (
       <>
         <div className="search">
@@ -49,14 +62,12 @@ const SearchBar = () => {
         </div>
         {newsData.map((item) => (
           <div key={item.description}>
+            <img className='image' src={item.urlToImage}/>
             <h1>{item.title}</h1>
-            <p>release_date:{item.publishedAt}</p>
-            <p>original_language:{item.source.name}</p>
-            <img src={item.urlToImage} alt="News Thumbnail" />
             <p>{item.description}</p>
             <p>{item.url}</p>
           </div>
-        ))}
+        ))} 
       </>
     );
   };

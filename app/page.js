@@ -13,7 +13,7 @@ const page = () => {
       <div className="container">
         <SearchBar />
         <div className='top-news'>Top News From India</div>
-        <News_row newsdata={news_data[0]} newsdata1={news_data[1]} newsdata2={news_data[2]}  />
+        <News_row newsdata={news_data[0]} newsdata1={news_data[1]} newsdata2={news_data[2]} />
         <News_row newsdata={news_data[3]} newsdata1={news_data[4]} newsdata2={news_data[5]}  />
         <News_row newsdata={news_data[6]} newsdata1={news_data[7]} newsdata2={news_data[8]} />
       </div>
