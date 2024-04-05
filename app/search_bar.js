@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 const SearchBar = () => {
   const [userInput, setUserInput] = useState("");
-  const [newsData, setNewsData] = useState([]);
 
   const handlesearchInput = (e) => {
     setUserInput(e.target.value);
@@ -20,8 +19,8 @@ const SearchBar = () => {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
-        setNewsData(data.articles);
+        // console.log(data);
+        console.log(data.articles)
       })
 
       .catch((error) => {
@@ -34,16 +33,6 @@ const SearchBar = () => {
       <div className="search">
         <input onChange={handlesearchInput} placeholder="Search" className="search-bar" type="search" />
         <button onClick={handlegoButton} className="go_button">Go</button>
-
-        {newsData.slice(0, 9).map((item) => (
-          <div key={item.description}>
-            <img className='image' src={item.urlToImage}/>
-            <p>{item.title}</p>
-            <p>{item.description}</p>
-            <p>{item.url}</p>
-          </div>
-        ))}
-
       </div>
     </>
   );
