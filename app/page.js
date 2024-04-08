@@ -1,10 +1,10 @@
 "use client"
 import React from "react";
+import articles from "./data.js";
 import Header from "./header.js";
 import SearchBar from "./search_bar.js";
-import Footer from "./footer.js"
-import news_data from "./data.js"
-import News_row from "./New_row.js";
+import Footer from "./footer.js";
+import News_row from "./news_row.js";
 
 const page = () => {
   return (
@@ -13,9 +13,9 @@ const page = () => {
       <div className="container">
         <SearchBar />
         <div className='top-news'>Top News From India</div>
-        <News_row newsdata={news_data[0]} newsdata1={news_data[1]} newsdata2={news_data[2]} />
-        <News_row newsdata={news_data[3]} newsdata1={news_data[4]} newsdata2={news_data[5]}  />
-        <News_row newsdata={news_data[6]} newsdata1={news_data[7]} newsdata2={news_data[8]} />
+        <News_row article1={articles[0]} article2={articles[1]} article3={articles[2]} />
+        <News_row article1={articles[3]} article2={articles[4]} article3={articles[5]}  />
+        <News_row article1={articles[6]} article2={articles[7]} article3={articles[8]} />
       </div>
       <Footer />
     </>

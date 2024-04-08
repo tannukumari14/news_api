@@ -2,40 +2,32 @@ import React, { useState } from "react";
 
 const SearchBar = () => {
   const [userInput, setUserInput] = useState("");
-  const articlesData = [];
+  const new_articles = [];
 
-  const handlesearchInput = (e) => {
+  const handleSearchInput = (e) => {
     setUserInput(e.target.value);
   };
 
-  const handlegoButton = () => {
-    console.log("search button clicked", userInput);
-    fetchNews(userInput);
-  };
-
-  const fetchNews = (userInput) => {
+  const fetchNews = () => {
     const apiKey = "44137023ef4d47af8275855373f32548";
     const url = `https://newsapi.org/v2/everything?q=${userInput}&apiKey=${apiKey}`;
 
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        const articles = data.articles.slice(0, 9); 
-        articles.forEach((article) => {
-          const title = article.title;
-          const url = article.url;
-          const description = article.description;
-          const urlToImage = article.urlToImage;
+        const search_articles = data.articles.slice(0, 9);
+        search_articles.forEach((search_article) => {
 
-          const articleObject = {
-            title: title,
-            url: url,
-            description: description,
-            urlToImage: urlToImage
+          const new_article = {
+            id: search_article.id,
+            title: search_article.title,
+            url: search_article.url,
+            description: search_article.description,
+            urlToImage: search_article.urlToImage
           };
-          articlesData.push(articleObject);
+          new_articles.push(new_article);
         });
-        console.log(articlesData);
+        console.log(new_articles);
       })
       .catch((error) => {
         console.log("error", error);
@@ -45,8 +37,17 @@ const SearchBar = () => {
   return (
     <>
       <div className="search">
-        <input onChange={handlesearchInput} placeholder="Search" className="search-bar" type="search" />
-        <button onClick={handlegoButton} className="go_button">Go</button>
+        <input 
+          type="search" 
+          placeholder="Search" 
+          className="search-bar" 
+          // value={userInput}
+          onChange={handleSearchInput} 
+        />
+        <button 
+          className="go_button"
+          onClick={fetchNews} 
+        >Go</button>
       </div>
     </>
   );
