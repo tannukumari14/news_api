@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const SearchBar = () => {
   const [userInput, setUserInput] = useState("");
+  const articlesData = [];
 
   const handlesearchInput = (e) => {
     setUserInput(e.target.value);
@@ -19,19 +20,22 @@ const SearchBar = () => {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        const articles = data.articles.slice(0, 9); // Get the first 10 articles only
+        const articles = data.articles.slice(0, 9); 
         articles.forEach((article) => {
           const title = article.title;
           const url = article.url;
           const description = article.description;
           const urlToImage = article.urlToImage;
 
-          console.log("Title:", title);
-          console.log("URL:", url);
-          console.log("Description:", description);
-          console.log("URL to Image:", urlToImage);
-          console.log("---------");
+          const articleObject = {
+            title: title,
+            url: url,
+            description: description,
+            urlToImage: urlToImage
+          };
+          articlesData.push(articleObject);
         });
+        console.log(articlesData);
       })
       .catch((error) => {
         console.log("error", error);
