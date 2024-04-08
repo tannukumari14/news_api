@@ -19,10 +19,20 @@ const SearchBar = () => {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        // console.log(data);
-        console.log(data.articles)
-      })
+        const articles = data.articles.slice(0, 9); // Get the first 10 articles only
+        articles.forEach((article) => {
+          const title = article.title;
+          const url = article.url;
+          const description = article.description;
+          const urlToImage = article.urlToImage;
 
+          console.log("Title:", title);
+          console.log("URL:", url);
+          console.log("Description:", description);
+          console.log("URL to Image:", urlToImage);
+          console.log("---------");
+        });
+      })
       .catch((error) => {
         console.log("error", error);
       });
