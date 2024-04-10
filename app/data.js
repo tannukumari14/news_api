@@ -1,4 +1,4 @@
-const articles = [
+const intinal_articles = [
   {
     id: 1,
     title: "Echoes of Defeat:A Personal Reflection on India's 2023 World Cup Loss",
@@ -48,7 +48,7 @@ const articles = [
   }
 ];
 
-export default articles;
+export default intinal_articles;
 
 
 

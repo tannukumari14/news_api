@@ -1,0 +1,106 @@
+// search
+
+// import React, { useState } from "react";
+
+// const SearchBar = ({ setArticles }) => {
+//   const [userInput, setUserInput] = useState("");
+
+//   const handleSearchInput = (e) => {
+//     setUserInput(e.target.value);
+//   };
+
+//   const fetchNews = () => {
+//     const apiKey = "44137023ef4d47af8275855373f32548";
+//     const url = `https://newsapi.org/v2/everything?q=${userInput}&apiKey=${apiKey}`;
+
+//     fetch(url)
+//       .then((response) => response.json())
+//       .then((data) => {
+//         const searchArticles = data.articles.slice(0, 9);
+//         setArticles(searchArticles); // Update parent component's state with new articles
+//       })
+//       .catch((error) => {
+//         console.log("error", error);
+//       });
+//   };
+
+//   return (
+//     <div className="search">
+//       <input 
+//         type="search" 
+//         placeholder="Search" 
+//         className="search-bar" 
+//         value={userInput}
+//         onChange={handleSearchInput} 
+//       />
+//       <button 
+//         className="go_button"
+//         onClick={fetchNews} 
+//       >Go</button>
+//     </div>
+//   );
+// };
+
+// export default SearchBar;
+
+
+// page
+// "use client"
+
+// // import React, { useState } from "react";
+
+// import React from "react";
+// import articles from "./data.js";
+// import Header from "./header.js";
+// import SearchBar from "./search_bar.js";
+// import Footer from "./footer.js";
+// import News_row from "./news_row.js";
+// // import ParentComponent from "./parent.js";
+
+
+// const page = () => {
+//   // const [articles, setArticles] = useState([]); 
+
+//   return (
+//     <>
+//       <Header />
+//       <div className="container">
+//         {/* <SearchBar setArticles={setArticles}  /> */}
+//         <div className='top-news'>Top News From India</div>
+//         <News_row article1={articles[0]} article2={articles[1]} article3={articles[2]} />
+//         <News_row article1={articles[3]} article2={articles[4]} article3={articles[5]}  />
+//         <News_row article1={articles[6]} article2={articles[7]} article3={articles[8]} />
+//         {/* <News_row articles={articles} /> */}
+//       </div>
+//       <Footer />
+//     </>
+//   );
+// };
+
+// export default page;
+
+// "use client"
+// import React from "react";
+// import articles from "./data.js";
+// import Header from "./header.js";
+// import SearchBar from "./search_bar.js";
+// import Footer from "./footer.js";
+// import News_row from "./news_row.js";
+
+// const page = () => {
+//   return (
+//     <>
+//       <Header />
+//       <div className="container">
+//         <SearchBar />
+//         <div className='top-news'>Top News From India</div>
+//         <News_row article1={articles[0]} article2={articles[1]} article3={articles[2]} />
+//         <News_row article1={articles[3]} article2={articles[4]} article3={articles[5]}  />
+//         <News_row article1={articles[6]} article2={articles[7]} article3={articles[8]} />
+//       </div>
+//       <Footer />
+//     </>
+//   );
+// };
+
+// export default page;
