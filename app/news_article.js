@@ -16,4 +16,3 @@ const News_article = ({article}) => (
   </>
 );
 export default News_article;
-

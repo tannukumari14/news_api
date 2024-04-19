@@ -412,3 +412,339 @@ export default page;
 
 
 
+
+
+//  page component replace data with search_bar fetch and display the initail_articles
+// import { useState, useEffect } from 'react'
+// import intinal_articles from "./data.js";
+// import Header from "./header.js";
+// import SearchBar from "./search_bar.js";
+// import Footer from "./footer.js";
+// import News_row from "./news_row.js";
+
+
+// const page = () => {
+//   const [articles, setArticles] = useState(intinal_articles);
+
+//   return (
+//     <>
+//       <Header />
+//       <div className="container">
+//         <SearchBar setArticles={setArticles} />
+//         <div className='top-news'>Top News From India</div>
+//         <News_row article1={articles[0]} article2={articles[1]} article3={articles[2]} />
+//         <News_row article1={articles[3]} article2={articles[4]} article3={articles[5]}  />
+//         <News_row article1={articles[6]} article2={articles[7]} article3={articles[8]} />
+//         <News_row articles={articles}/>
+//       </div>
+//       <Footer />
+//     </>
+//   );
+// };
+
+// export default page;
+
+
+
+//  search
+// "use client"
+// import React, { useState } from "react";
+
+// const SearchBar = ({ setArticles }) => {
+//   const [userInput, setUserInput] = useState("");
+
+//   const handleSearchInput = (e) => {
+//     setUserInput(e.target.value);
+//   };
+
+
+//   // const fetchNews = () => {
+//   //   const apiKey = "44137023ef4d47af8275855373f32548";
+//   //   const url = `https://newsapi.org/v2/everything?q=${userInput}&apiKey=${apiKey}`;
+
+//   //   fetch(url)
+//   //     .then((response) => response.json())
+//   //     .then((data) => {
+//   //       const searchArticles = data.articles.slice(0, 9);
+//   //       setArticles(searchArticles); 
+//   //       console.log("searchArticles",searchArticles);
+//   //     })
+//   //     .catch((error) => {
+//   //       console.log("error", error);
+//   //     });
+//   // };
+
+  
+//   const fetchNews = () => {
+//     const apiKey = "44137023ef4d47af8275855373f32548";
+//     const url = `https://newsapi.org/v2/everything?q=${userInput}&apiKey=${apiKey}`;
+  
+//     fetch(url)
+//       .then((response) => response.json())
+//       .then((data) => {
+//         const searchArticles = data.articles.map(article => ({
+//           urlToImage: article.urlToImage,
+//           title: article.title,
+//           description:article.description,
+//           url:article.url
+//         })).slice(0, 9);
+//         setArticles(searchArticles);
+//         console.log("searchArticles",searchArticles);
+//       })
+//       .catch((error) => {
+//         console.log("error", error);
+//       });
+//   };
+  
+//   return (
+//     <div className="search">
+//       <input 
+//         type="search" 
+//         placeholder="Search" 
+//         className="search-bar" 
+//         value={userInput}
+//         onChange={handleSearchInput} 
+//       />
+//       <button 
+//         className="go_button"
+//         onClick={fetchNews} 
+//       >Go</button>
+//     </div>
+//   );
+// };
+
+// export default SearchBar;
+
+
+// page
+"use client"
+// import React, { useState, useEffect } from 'react';
+// import Header from './header.js';
+// import SearchBar from './search_bar.js';
+// import Footer from './footer.js';
+// import NewsRow from './news_row.js';
+
+// const Page = () => {
+//   const [articles, setArticles] = useState([]);
+
+//   useEffect(() => {
+//     const apiKey = "44137023ef4d47af8275855373f32548";
+//     fetch(`https://newsapi.org/v2/top-headlines?country=in&pageSize=9&apiKey=${apiKey}`)
+//       .then((res) => res.json())
+//       .then((data) => {
+//         if (data.articles && data.articles.length > 0) {
+//           const extractedArticles = data.articles.map(article => ({
+//             title: article.title,
+//             description: article.description,
+//             urlToImage: article.urlToImage,
+//             url: article.url
+//           }));
+//           setArticles(extractedArticles);
+//         }
+//       })
+//       .catch((error) => {
+//         console.error('Error fetching data:', error);
+//       });
+//   }, []); 
+
+//   return (
+//     <>
+//       <Header />
+//       <div className="container">
+//         <SearchBar setArticles={setArticles} />
+//         <div className='top-news'>Top News From India</div>
+//         <NewsRow articles={articles} />
+//       </div>
+//       <Footer />
+//     </>
+//   );
+// };
+
+// export default Page;
+
+
+// import React, { useState, useEffect } from 'react';
+// import Header from './header.js';
+// import SearchBar from './search_bar.js';
+// import Footer from './footer.js';
+// import News_row from './news_row.js';
+
+// const Page = () => {
+//   const [articles, setArticles] = useState(); // Initialize as null
+
+//   useEffect(() => {
+//     const setArticles = () => {
+//       const apiKey = "44137023ef4d47af8275855373f32548";
+//       fetch(`https://newsapi.org/v2/top-headlines?country=in&pageSize=9&apiKey=${apiKey}`)
+//         .then((res) => res.json())
+//         .then((data) => {
+//           console.log("Articles data:", data.articles); // Log articles data
+//           // Log urlToImage, description, and title for each article
+//           data.articles.forEach(article => {
+//             console.log("urlToImage:", article.urlToImage);
+//             console.log("description:", article.description);
+//             console.log("title:", article.title);
+//           });
+//           // Slice the articles array to get only the first 9 articles
+//           let limitedArticles = data.articles.slice(0, 9);
+//           setArticles(limitedArticles);
+//         })
+//         .catch((error) => {
+//           console.error('Error fetching data:', error);
+//         });
+//     };
+
+//     // Call fetchArticles function
+//     setArticles();
+//   }, []);
+
+//   // Function to set articles
+//   const updateArticles = (newArticles) => {
+//     setArticles(newArticles);
+//   };
+
+//   return (
+//     <>
+//       <Header />
+//       <div className="container">
+//         <SearchBar setArticles={updateArticles} />
+//         <div className='top-news'>Top News From India</div>
+//         {articles !== null && <News_row articles={articles} />}
+//       </div>
+//       <Footer />
+//     </>
+//   );
+// };
+
+// export default Page;
+
+
+// import React, { useState, useEffect } from 'react';
+// import Header from './header.js';
+// import SearchBar from './search_bar.js';
+// import Footer from './footer.js';
+// import NewsRow from './news_row.js';
+
+// const Page = () => {
+//   const [articles, setArticles] = useState(null);
+
+//   useEffect(() => {
+//     const apiKey = "44137023ef4d47af8275855373f32548";
+//     fetch(`https://newsapi.org/v2/top-headlines?country=in&pageSize=9&apiKey=${apiKey}`)
+//       .then((res) => res.json())
+//       .then((data) => {
+//         const limitedArticles = data.articles.slice(0, 9);
+//         setArticles(limitedArticles);
+//       })
+//       .catch((error) => {
+//         console.error('Error fetching data:', error);
+//       });
+//   }, []);
+
+//   return (
+//     <>
+//       <Header />
+//       <div className="container">
+//         <SearchBar setArticles={setArticles} />
+//         <div className='top-news'>Top News From India</div>
+//         {articles && <NewsRow articles={articles} />}
+//       </div>
+//       <Footer />
+//     </>
+//   );
+// };
+
+// export default Page;
+
+
+// new article
+// import React from 'react';
+
+
+// const News_article = ({article}) => (
+//   <>
+//   {article &&(
+//     <div className='col-sm-4'>
+//       <img className='image' src={article.urlToImage} alt={article.title} />
+//       <h2 className='title'>{article.title}</h2>
+//       <p className='description'>{article.description}</p>
+//       <a className="arrow_para">
+//         Read full article <img className="arrow" src="arrow.jpeg" alt="arrow" />
+//       </a>
+//     </div>
+//   )}
+//   </>
+// );
+// export default News_article;
+
+// row
+// import React from 'react';
+// import News_article from "./news_article.js";
+
+// // const News_row = ({article1, article2, article3}) => {
+//     const News_row = ({articles}) => {
+//     return (
+//         <>
+//             <div className="row">
+//                 {/* <News_article article={article1}/> */}
+//                 {/* <News_article article={article2}/> */}
+//                 {/* <News_article article={article3}/> */}
+//                 <News_article article={articles}/>
+//             </div>
+//         </>
+//     );
+// }
+// export default News_row;
+
+
+// serach console
+// "use client"
+// import React, { useState } from "react";
+
+// const SearchBar = ({ fetchArticles }) => {
+//   const [userInput, setUserInput] = useState("");
+
+//   const handleSearchInput = (e) => {
+//     setUserInput(e.target.value);
+//   };
+    
+//   const fetchNews = () => {
+//     const apiKey = "44137023ef4d47af8275855373f32548";
+//     const url = `https://newsapi.org/v2/everything?q=${userInput}&apiKey=${apiKey}`;
+  
+//     fetch(url)
+//       .then((response) => response.json())
+//       .then((data) => {
+//         const searchArticles = data.articles.map(article => ({
+//           urlToImage: article.urlToImage,
+//           title: article.title,
+//           description:article.description,
+//           url:article.url
+//         })).slice(0, 9);
+//         fetchArticles(searchArticles);
+//         console.log("searchArticles",searchArticles);
+//       })
+//       .catch((error) => {
+//         console.log("error", error);
+//       });
+//   };
+  
+
+//   return (
+//     <div className="search">
+//       <input 
+//         type="search" 
+//         placeholder="Search" 
+//         className="search-bar" 
+//         value={userInput}
+//         onChange={handleSearchInput} 
+//       />
+//       <button 
+//         className="go_button"
+//         onClick={fetchNews} 
+//       >Go</button>
+//     </div>
+//   );
+// };
+
+// export default SearchBar;

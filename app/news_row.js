@@ -13,7 +13,3 @@ const News_row = ({article1, article2, article3}) => {
     );
 }
 export default News_row;
-
-
-
-
