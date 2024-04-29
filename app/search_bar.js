@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from "react";
 
-const SearchBar = ({ fetchArticles }) => {
+const SearchBar = ({ changeArticles }) => {
   const [userInput, setUserInput] = useState("");
 
   const handleSearchInput = (e) => {
@@ -16,7 +16,8 @@ const SearchBar = ({ fetchArticles }) => {
       .then((response) => response.json())
       .then((data) => {
         const searchArticles = data.articles.slice(0, 9);
-        fetchArticles(searchArticles); 
+        changeArticles(searchArticles); 
+        console.log(searchArticles)
       })
       .catch((error) => {
         console.log("error", error);
