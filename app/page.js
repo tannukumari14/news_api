@@ -10,11 +10,10 @@ import intinal_articles from "./data.js";
 const Page = () => {
   let [articles, setArticles] = useState(initial_articles);
 
-  console.log(intinal_articles)
+  console.log(articles)
 
   const changeArticles = (newArticles) => {
     setArticles(newArticles);
-    console.log(setArticles)
   };
 
 
@@ -34,6 +33,5 @@ const Page = () => {
 };
 
 export default Page;
-
 
 
